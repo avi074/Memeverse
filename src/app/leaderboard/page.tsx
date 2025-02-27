@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import MemeCard from "@/components/MemeCard";
+import { Meme } from "@/types/meme";
 
 export default function Leaderboard() {
-  const [topMemes, setTopMemes] = useState([]);
+  const [topMemes, setTopMemes] = useState<Meme[]>([]);
 
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes?sort=likes")
